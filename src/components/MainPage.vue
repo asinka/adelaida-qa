@@ -1,25 +1,34 @@
 <script setup lang="ts">
+import ProjectsSection from './ProjectsSection.vue'
 
 const skills = [
-  "Python",
-  "JavaScript (TypeScript)",
   "Playwright",
   "Selenium",
+  "Cypress.io",
+  "Cucumber",
+  "Appium",
+  "Python",
+  "JavaScript",
+  "TypeScript",
+  "Java",
   "Git",
+  "Gitlab",
+  "Github",
   "Github Actions",
   "Bamboo CI",
+  "Jenkins",
   "REST/GRPC API testing",
-  "Cucumber",
   "Postman",
   "Linux CLI",
-  "Allure"
+  "Allure",
+  "Zephyr",
+  "HP ALM"
 ];
 
 </script>
 
 <template>
   <div class="relative min-h-screen scroll-smooth">
-    <!-- Фото в правом верхнем углу -->
     <img
       src="/your-photo.jpg"
       alt="My photo"
@@ -27,7 +36,7 @@ const skills = [
     />
 
     <h1 class="text-4xl font-bold text-rose-300 text-center mb-6">
-      Hi, I’m Adelaida
+      Hi, I'm Adelaida Sinikova
     </h1>
 
     <section class="mb-16">
@@ -42,7 +51,7 @@ const skills = [
         Driven by curiosity and impact, I enjoy solving complex challenges, learning new tools, and crafting systems that are both reliable and elegant.
       </p>
       <p>
-        In my free time, you’ll find me running, reading, playing piano, or catching up with friends.
+        In my free time, you'll find me running, reading, playing piano, or catching up with friends.
       </p>
       </div>
     </section>
@@ -53,13 +62,15 @@ const skills = [
         <span
           v-for="(skill, index) in skills"
           :key="index"
-          class="rounded-full border border-rose-300 bg-rose-300 text-violet-950 py-2 px-5 shadow-md animate-fade-in text-sm md:text-base"
+          class="rounded-full border border-rose-300 bg-rose-300 text-violet-950 py-2 px-3 shadow-md animate-fade-in text-sm md:text-base"
           :style="{ animationDelay: `${index * 0.05}s` }"
         >
           {{ skill }}
         </span>
       </div>
     </section>
+
+    <ProjectsSection />
 
     <section class="mb-16 bg-violet-900 rounded-xl shadow-xl px-6 py-8">
       <h2 class="text-2xl font-semibold text-rose-300 text-center mb-6">Experience Highlights</h2>

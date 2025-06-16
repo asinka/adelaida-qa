@@ -28,18 +28,19 @@ const skills = [
 </script>
 
 <template>
-  <div class="relative min-h-screen scroll-smooth">
+  <div class="relative min-h-screen scroll-smooth overflow-x-hidden safe-area">
     <img
       src="/your-photo.jpg"
       alt="My photo"
-      class="absolute top-4 right-4 w-44 h-44 rounded-full shadow-2xl object-cover border-4 border-violet-950 z-10"
+      class="w-28 h-28 sm:w-44 sm:h-44 rounded-full shadow-2xl object-cover border-4 border-violet-950 z-10
+          mx-auto sm:mx-0 sm:absolute sm:top-4 sm:right-4"
     />
 
     <h1 class="text-4xl font-bold text-rose-300 text-center mb-6">
       Hi, I'm Adelaida Sinikova
     </h1>
 
-    <section class="mb-16">
+    <section class="mb-16 px-4 sm:px-6">
       <div class="text-lg font-medium text-center max-w-3xl mx-auto text-violet-950">
       <p>
         Senior QA Automation Engineer with 10 years of experience.
@@ -62,7 +63,7 @@ const skills = [
         <span
           v-for="(skill, index) in skills"
           :key="index"
-          class="rounded-full border border-rose-300 bg-rose-300 text-violet-950 py-2 px-3 shadow-md animate-fade-in text-sm md:text-base"
+          class="break-words rounded-full border border-rose-300 bg-rose-300 text-violet-950 py-2 px-3 sm:px-5 shadow-md animate-fade-in text-sm md:text-base"
           :style="{ animationDelay: `${index * 0.05}s` }"
         >
           {{ skill }}
@@ -72,7 +73,7 @@ const skills = [
 
     <ProjectsSection />
 
-    <section class="mb-16 bg-violet-900 rounded-xl shadow-xl px-6 py-8">
+    <section class="mb-16 bg-violet-900 rounded-xl shadow-xl px-6 py-8 sm:px-6">
       <h2 class="text-2xl font-semibold text-rose-300 text-center mb-6">Experience Highlights</h2>
       <div class="grid gap-6">
         <Card>
@@ -101,7 +102,7 @@ const skills = [
           </CardContent>
         </Card>
         <Card>
-          <CardContent class="p-6 text-right">
+          <CardContent class="p-6 text-right mb-16 px-4 sm:px-6">
             <h3 class="text-lg font-bold text-rose-200">[02.2023 - 05.2024] QA Automation Engineer / Team Lead at Trak Services, Remote</h3>
             <div class="text-violet-200">
               <p>
@@ -126,7 +127,7 @@ const skills = [
           </CardContent>
         </Card>
         <Card>
-          <CardContent class="p-6 text-left">
+          <CardContent class="p-6 text-left mb-16 px-4 sm:px-6">
             <h3 class="text-lg font-bold text-rose-200">[09.2022 - 01.2023] Software Developer in Test at Lightspeed, Tbilisi</h3>
             <div class="text-violet-200">
               <p>
@@ -145,7 +146,7 @@ const skills = [
           </CardContent>
         </Card>
         <Card>
-          <CardContent class="p-6 text-right">
+          <CardContent class="p-6 text-right mb-16 px-4 sm:px-6">
             <h3 class="text-lg font-bold text-rose-200">[10.2021 - 08.2022] QA Fullstack Engineer at andex, Moscow</h3>
             <div class="text-violet-200">
               <p>
@@ -164,7 +165,7 @@ const skills = [
           </CardContent>
         </Card>
         <Card>
-          <CardContent class="p-6 text-left">
+          <CardContent class="p-6 text-left mb-16 px-4 sm:px-6">
             <h3 class="text-lg font-bold text-rose-200">[12.2018 - 09.2021] Software Developer in Test at Align Technology, Moscow</h3>
             <div class="text-violet-200">
               <p>
@@ -180,7 +181,7 @@ const skills = [
           </CardContent>
         </Card>
         <Card>
-          <CardContent class="p-6 text-right">
+          <CardContent class="p-6 text-right mb-16 px-4 sm:px-6">
             <h3 class="text-lg font-bold text-rose-200">[08.2017 - 05.2018] Testing Department Consultant at National Payment Card System, Moscow</h3>
             <div class="text-violet-200">
               <p>
@@ -196,7 +197,7 @@ const skills = [
           </CardContent>
         </Card>
         <Card>
-          <CardContent class="p-6 text-left">
+          <CardContent class="p-6 text-left mb-16 px-4 sm:px-6">
             <h3 class="text-lg font-bold text-rose-200">[12.2015 - 07.2017] Junior Software Developer in Test at Ingram Micro Cloud, Moscow</h3>
             <div class="text-violet-200">
               <p>
@@ -212,7 +213,7 @@ const skills = [
           </CardContent>
         </Card>
         <Card>
-          <CardContent class="p-6 text-right">
+          <CardContent class="p-6 text-right mb-16 px-4 sm:px-6">
             <h3 class="text-lg font-bold text-rose-200">[03.2015 - 11.2015] Manual QA at Luxoft, Omsk </h3>
             <div class="text-violet-200">
               <p>
@@ -230,14 +231,14 @@ const skills = [
     <section class="mb-16 bg-violet-900 rounded-xl shadow-xl px-6 py-8">
       <h2 class="text-2xl font-semibold text-rose-300 text-center mb-6">Contacts</h2>
       <div class="flex flex-col sm:grid sm:grid-cols-3 gap-4 text-center">
-        <a href="mailto:sinikowa@gmail.com" class="inline-flex justify-center items-center px-4 py-2 border border-violet-300 rounded-md shadow-sm text-sm font-medium text-pink-200 bg-violet-900 hover:bg-pink-400">
+        <a href="mailto:sinikowa@gmail.com" class="w-full text-wrap inline-flex justify-center items-center px-4 py-2 border border-violet-300 rounded-md shadow-sm text-sm font-medium text-pink-200 bg-violet-900 hover:bg-pink-400">
           <Mail class="w-4 h-4 mr-2" /> sinikowa@gmail.com
         </a>
-        <a href="https://linkedin.com/in/adasinikova" target="_blank" class="inline-flex justify-center items-center px-4 py-2 border border-violet-300 rounded-md shadow-sm text-sm font-medium text-pink-200 bg-violet-900 hover:bg-pink-400">
+        <a href="https://linkedin.com/in/adasinikova" target="_blank" class="w-full text-wrap inline-flex justify-center items-center px-4 py-2 border border-violet-300 rounded-md shadow-sm text-sm font-medium text-pink-200 bg-violet-900 hover:bg-pink-400">
           <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.762 0-5 2.238-5 5v14c0 2.762 2.238 5 5 5h14c2.762 0 5-2.238 5-5v-14c0-2.762-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.867-3.063-1.868 0-2.154 1.46-2.154 2.97v5.697h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.839-1.563 3.036 0 3.598 2 3.598 4.598v5.598z"/></svg>
           linkedin.com/in/adasinikova
         </a>
-        <a href="https://github.com/asinka" target="_blank" class="inline-flex justify-center items-center px-4 py-2 border border-violet-300 rounded-md shadow-sm text-sm font-medium text-pink-200 bg-violet-900 hover:bg-pink-400">
+        <a href="https://github.com/asinka" target="_blank" class="w-full text-wrap inline-flex justify-center items-center px-4 py-2 border border-violet-300 rounded-md shadow-sm text-sm font-medium text-pink-200 bg-violet-900 hover:bg-pink-400">
           <Github class="w-4 h-4 mr-2" /> github.com/asinka
         </a>
       </div>

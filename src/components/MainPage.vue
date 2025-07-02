@@ -230,16 +230,22 @@ const skills = [
 
     <section class="mb-16 bg-violet-900 rounded-xl shadow-xl px-6 py-8">
       <h2 class="text-2xl font-semibold text-rose-300 text-center mb-6">Contacts</h2>
-      <div class="flex flex-col sm:grid sm:grid-cols-3 gap-4 text-center">
+      <div class="flex flex-col sm:grid sm:grid-cols-4 gap-4 text-center">
         <a href="mailto:sinikowa@gmail.com" class="w-full text-wrap inline-flex justify-center items-center px-4 py-2 border border-violet-300 rounded-md shadow-sm text-sm font-medium text-pink-200 bg-violet-900 hover:bg-pink-400">
-          <Mail class="w-4 h-4 mr-2" /> sinikowa@gmail.com
+          <i class="w-4 h-4 mr-2 pi pi-google"></i>
+          sinikowa@gmail.com
         </a>
         <a href="https://linkedin.com/in/adasinikova" target="_blank" class="w-full text-wrap inline-flex justify-center items-center px-4 py-2 border border-violet-300 rounded-md shadow-sm text-sm font-medium text-pink-200 bg-violet-900 hover:bg-pink-400">
           <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.762 0-5 2.238-5 5v14c0 2.762 2.238 5 5 5h14c2.762 0 5-2.238 5-5v-14c0-2.762-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.867-3.063-1.868 0-2.154 1.46-2.154 2.97v5.697h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.839-1.563 3.036 0 3.598 2 3.598 4.598v5.598z"/></svg>
           linkedin.com/in/adasinikova
         </a>
+        <a href="https://t.me/adasinikova" target="_blank" class="w-full text-wrap inline-flex justify-center items-center px-4 py-2 border border-violet-300 rounded-md shadow-sm text-sm font-medium text-pink-200 bg-violet-900 hover:bg-pink-400">
+          <i class="w-4 h-4 mr-2 pi pi-telegram"></i>
+          t.me/adasinikova
+        </a>
         <a href="https://github.com/asinka" target="_blank" class="w-full text-wrap inline-flex justify-center items-center px-4 py-2 border border-violet-300 rounded-md shadow-sm text-sm font-medium text-pink-200 bg-violet-900 hover:bg-pink-400">
-          <Github class="w-4 h-4 mr-2" /> github.com/asinka
+          <i class="w-4 h-4 mr-2 pi pi-github"></i>
+          github.com/asinka
         </a>
       </div>
     </section>

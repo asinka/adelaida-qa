@@ -1,270 +1,222 @@
 <script setup lang="ts">
 import ProjectsSection from './ProjectsSection.vue'
 
-const skills = [
-  "Playwright",
-  "Selenium",
-  "Cypress.io",
-  "Cucumber",
-  "Appium",
-  "Python",
-  "JavaScript",
-  "TypeScript",
-  "Java",
-  "Git",
-  "Gitlab",
-  "Github",
-  "Github Actions",
-  "Bamboo CI",
-  "Jenkins",
-  "REST/GRPC API testing",
-  "Postman",
-  "Linux CLI",
-  "Allure",
-  "Zephyr",
-  "HP ALM"
-];
+const toolkitPillars = [
+  {
+    number: '01', title: 'Quality Leadership', icon: 'pi-users', description: 'Building capable QA teams and aligning quality with product goals.', featured: true,
+    groups: [
+      { title: 'People leadership', skills: ['Team building', 'Hiring', 'Mentoring', 'Onboarding', 'Resource planning'] },
+      { title: 'Quality leadership', skills: ['QA strategy', 'Process design', 'Cross-team alignment', 'Stakeholder management', 'Continuous improvement'] },
+    ],
+  },
+  {
+    number: '02', title: 'Quality Ecosystem', icon: 'pi-sitemap', description: 'Making quality visible, measurable, and repeatable throughout delivery.',
+    groups: [
+      { title: 'Testing foundations', skills: ['Test strategy', 'Test planning', 'Risk-based testing', 'Exploratory testing', 'Test design', 'Defect management'] },
+      { title: 'Test operations', skills: ['Qase', 'Allure', 'Zephyr'] },
+      { title: 'Delivery', skills: ['GitHub', 'GitLab', 'GitHub Actions', 'Jenkins', 'Bamboo CI', 'Jira', 'Linear'] },
+    ],
+  },
+  {
+    number: '03', title: 'Test Engineering', icon: 'pi-code', description: 'Technical depth to guide automation across UI, mobile, and APIs.',
+    groups: [
+      { title: 'Automation', skills: ['Playwright', 'Selenium', 'Cypress.io', 'Cucumber', 'Appium'] },
+      { title: 'Languages', skills: ['TypeScript', 'JavaScript', 'Python', 'Java'] },
+      { title: 'API testing', skills: ['REST API', 'GraphQL', 'gRPC', 'Postman'] },
+    ],
+  },
+]
 
+const experience = [
+  {
+    period: '07.2025 — Present', role: 'QA Automation Lead', company: 'Alix Inc', location: 'Remote', current: true,
+    highlights: [
+      "Joined as the company's first QA automation engineer and built the automation foundation from scratch.",
+      'Established testing and automation processes for a fully distributed international engineering organization.',
+      'Built the QA team and led hiring, onboarding, and team development.',
+      'Lead six QA engineers supporting five product teams, partnering with US-based managers and engineers worldwide.',
+      'Developed E2E automation with Playwright and introduced Python-based tests for internal tools.',
+      'Evolved delivery workflows with GitHub, GitHub Actions, Jira, and Linear.',
+    ],
+  },
+  {
+    period: '06.2024 — 05.2025', role: 'QA Fullstack Engineer', company: 'Vivid Money', location: 'Remote',
+    highlights: [
+      'Set up a QA process for a new product team from scratch.',
+      'Expanded automated regression and feature test coverage using Playwright and TypeScript.',
+      'Revived and scaled mobile test automation after years of inactivity.',
+      'Evaluated AI-based tools for mobile E2E automation in collaboration with an external team.',
+      'Increased gRPC API test coverage and manually tested new API and mobile features.',
+      'Maintained up-to-date test documentation.',
+    ],
+  },
+  {
+    period: '02.2023 — 05.2024', role: 'QA Automation Engineer / Team Lead', company: 'Trak Services', location: 'Remote',
+    highlights: [
+      'Built test automation from the ground up as the first QA automation engineer on the team.',
+      'Achieved 40–80% test coverage across multiple projects, leading one to 80% coverage under my guidance.',
+      'Reduced regression testing time from two days to four hours through automation.',
+      'Mentored manual testers in automation basics and onboarded new QA automation engineers.',
+      'Conducted interviews and managed task planning and resource allocation for the automation team.',
+      'Initiated regular QA team meetings and drove continuous process improvements.',
+    ],
+  },
+  {
+    period: '09.2022 — 01.2023', role: 'Software Developer in Test', company: 'Lightspeed', location: 'Tbilisi',
+    highlights: [
+      'Expanded E2E coverage with Playwright and Appium.',
+      'Structured test runs and reports by feature for better traceability.',
+      'Monitored and maintained automated test results for stability and relevance.',
+      'Enhanced internal testing framework and infrastructure.',
+    ],
+  },
+  {
+    period: '10.2021 — 08.2022', role: 'QA Fullstack Engineer', company: 'andex', location: 'Moscow',
+    highlights: [
+      'Set up QA and release processes as the first automation engineer in the team.',
+      'Analyzed existing tests and features and created structured, prioritized test documentation.',
+      'Developed automated tests using the Hermione framework based on WebdriverIO.',
+      'Collaborated with cross-functional teams on integrations and joint releases.',
+    ],
+  },
+  {
+    period: '12.2018 — 09.2021', role: 'Software Developer in Test', company: 'Align Technology', location: 'Moscow',
+    highlights: [
+      'Developed automated tests for web and API services and designed supporting infrastructure.',
+      'Refactored and modularized the test monorepository and introduced a new architecture.',
+      'Mentored an intern to junior-level QA and wrote onboarding and technical documentation.',
+    ],
+  },
+  {
+    period: '08.2017 — 05.2018', role: 'Testing Department Consultant', company: 'National Payment Card System', location: 'Moscow',
+    highlights: [
+      'Contributed to the development of a new internal test automation framework.',
+      'Managed testing team processes and supported a legacy test framework.',
+      'Introduced and formalized git-flow practices within the team.',
+    ],
+  },
+  {
+    period: '12.2015 — 07.2017', role: 'Junior Software Developer in Test', company: 'Ingram Micro Cloud', location: 'Moscow',
+    highlights: [
+      'Implemented and maintained E2E and API test automation for new features.',
+      'Analyzed test run results and compiled test reports.',
+      'Created Jenkins pipelines and managed test environment deployments.',
+    ],
+  },
+  {
+    period: '03.2015 — 11.2015', role: 'Manual QA', company: 'Luxoft', location: 'Omsk',
+    highlights: [
+      'Performed smoke, regression, and integration testing.',
+      'Created test designs, documented defects, and partnered with developers on resolution.',
+    ],
+  },
+]
 </script>
 
 <template>
-  <div class="relative min-h-screen scroll-smooth overflow-x-hidden safe-area">
-    <img
-      src="/your-photo.jpg"
-      alt="My photo"
-      class="w-28 h-28 sm:w-44 sm:h-44 rounded-full shadow-2xl object-cover border-4 border-violet-950 z-10
-          mx-auto sm:mx-0 sm:absolute sm:top-4 sm:right-4"
-    />
+  <main>
+    <nav class="nav shell" aria-label="Primary navigation">
+      <a class="monogram" href="#top" aria-label="Back to top">AS</a>
+      <div class="nav-links">
+        <a href="#work">Work</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
 
-    <h1 class="text-4xl font-bold text-rose-300 text-center mb-6">
-      Hi, I'm Adelaida Sinikova
-    </h1>
-
-    <section class="mb-16 px-4 sm:px-6">
-      <div class="text-lg font-medium text-center max-w-3xl mx-auto text-violet-950">
-      <p>
-        Senior QA Automation Engineer with 10 years of experience.
-      </p>
-      <p>
-        I build and optimize test automation processes to boost product quality and release confidence. From launching QA from scratch to improving legacy workflows, I help teams deliver with precision and speed.
-      </p>
-      <p>
-        Driven by curiosity and impact, I enjoy solving complex challenges, learning new tools, and crafting systems that are both reliable and elegant.
-      </p>
-      <p>
-        In my free time, you'll find me running, reading, playing piano, or catching up with friends.
-      </p>
+    <section id="top" class="hero shell">
+      <div class="hero-copy">
+        <p class="eyebrow">QA AUTOMATION · TEAM LEADERSHIP · REMOTE</p>
+        <h1>I build quality teams<br><span>that products trust.</span></h1>
+        <p class="intro">
+          Hi, I’m Adelaida — a QA Automation Lead who builds high-performing QA teams and turns testing
+          into a reliable engineering practice. I set direction, grow people, and help products ship with confidence.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#experience">Explore my experience <span>↓</span></a>
+          <a class="button secondary" href="#contact">Let’s talk</a>
+        </div>
+      </div>
+      <div class="portrait-wrap">
+        <div class="portrait-glow"></div>
+        <img src="/your-photo.webp" alt="Adelaida Sinikova" class="portrait" width="660" height="649" decoding="async" fetchpriority="high" />
+        <div class="available"><span></span> Open to meaningful conversations</div>
       </div>
     </section>
 
-    <section class="mb-16 bg-violet-900 rounded-xl shadow-xl px-6 py-8">
-      <h2 class="text-2xl font-semibold text-rose-300 text-center mb-6">Tech Stack</h2>
-      <div class="flex flex-wrap justify-center gap-3">
-        <span
-          v-for="(skill, index) in skills"
-          :key="index"
-          class="break-words rounded-full border border-rose-300 bg-rose-300 text-violet-950 py-2 px-3 sm:px-5 shadow-md animate-fade-in text-sm md:text-base"
-          :style="{ animationDelay: `${index * 0.05}s` }"
-        >
-          {{ skill }}
-        </span>
+    <section class="metrics shell" aria-label="Career highlights">
+      <div><strong>11+</strong><span>years in QA</span></div>
+      <div><strong>6</strong><span>QA engineers led</span></div>
+      <div><strong>5</strong><span>product teams supported</span></div>
+      <div><strong>4h</strong><span>regression, down from 2 days</span></div>
+    </section>
+
+    <section id="toolkit" class="section shell">
+      <div class="section-heading">
+        <p class="eyebrow">MY TOOLKIT</p>
+        <h2>Leadership backed by engineering depth</h2>
+        <p>I build strong QA teams, set a clear quality direction, and stay close enough to the technology to make pragmatic decisions.</p>
+      </div>
+      <div class="skill-grid">
+        <article v-for="pillar in toolkitPillars" :key="pillar.title" class="skill-card" :class="{ featured: pillar.featured }">
+          <div class="skill-card-header">
+            <span class="skill-icon"><i class="pi" :class="pillar.icon"></i></span>
+            <span class="skill-number">{{ pillar.number }}</span>
+          </div>
+          <h3>{{ pillar.title }}</h3>
+          <p class="skill-description">{{ pillar.description }}</p>
+          <div class="skill-groups">
+            <div v-for="group in pillar.groups" :key="group.title" class="skill-group">
+              <h4>{{ group.title }}</h4>
+              <div class="tags"><span v-for="skill in group.skills" :key="skill">{{ skill }}</span></div>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
-    <ProjectsSection />
+    <ProjectsSection id="work" />
 
-    <section class="mb-16 bg-violet-900 rounded-xl shadow-xl px-6 py-8 sm:px-6">
-      <h2 class="text-2xl font-semibold text-rose-300 text-center mb-6">Experience Highlights</h2>
-      <div class="grid gap-6">
-        <Card>
-          <CardContent class="p-6 text-left">
-            <h3 class="text-lg font-bold text-rose-200">[06.2024 - 05.2025] QA Fullstack Engineer at Vivid Money, Remote</h3>
-            <div class="text-violet-200">
-              <p>
-                Set up a QA process for a new product team from scratch.
-              </p>
-              <p>
-                Expanded automated regression and feature test coverage using Playwright (TypeScript).
-              </p>
-              <p>
-                Revived and scaled mobile test automation after years of inactivity.
-              </p>
-              <p>
-                Evaluated AI-based tools for mobile E2E automation in collaboration with an external team.
-              </p>
-              <p>
-                Increased gRPC API test coverage and manually tested new API and mobile features.
-              </p>
-              <p>
-                Maintained up-to-date test documentation.
-              </p>
+    <section id="experience" class="section shell experience-section">
+      <div class="section-heading">
+        <p class="eyebrow">CAREER JOURNEY</p>
+        <h2>From hands-on testing to QA leadership</h2>
+        <p>More than a decade of building automation, improving delivery, and growing people.</p>
+      </div>
+      <div class="timeline">
+        <article v-for="job in experience" :key="`${job.company}-${job.period}`" class="timeline-item" :class="{ current: job.current }">
+          <div class="timeline-date">{{ job.period }}</div>
+          <div class="job-card">
+            <div class="job-topline">
+              <div class="job-identity">
+                <div>
+                  <h3>{{ job.role }}</h3>
+                  <p class="company">{{ job.company }} <span>· {{ job.location }}</span></p>
+                </div>
+              </div>
+              <span v-if="job.current" class="current-badge">CURRENT</span>
             </div>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardContent class="p-6 text-right mb-16 px-4 sm:px-6">
-            <h3 class="text-lg font-bold text-rose-200">[02.2023 - 05.2024] QA Automation Engineer / Team Lead at Trak Services, Remote</h3>
-            <div class="text-violet-200">
-              <p>
-                Built test automation from the ground up as the first QA automation engineer on the team.
-              </p>
-              <p>
-                Achieved 40 - 80% test coverage across multiple projects, leading one to 80% coverage under my guidance.
-              </p>
-              <p>
-                Reduced regression testing time from 2 days to 4 hours through automation.
-              </p>
-              <p>
-                Mentored manual testers in automation basics and onboarded new QA automation engineers.
-              </p>
-              <p>
-                Conducted interviews and managed task planning and resource allocation for the automation team.
-              </p>
-              <p>
-                Initiated regular QA team meetings and drove continuous process improvements.
-              </p>
-            </div>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardContent class="p-6 text-left mb-16 px-4 sm:px-6">
-            <h3 class="text-lg font-bold text-rose-200">[09.2022 - 01.2023] Software Developer in Test at Lightspeed, Tbilisi</h3>
-            <div class="text-violet-200">
-              <p>
-                Expanded E2E test coverage using Playwright and Appium.
-              </p>
-              <p>
-                Structured test runs and reports by feature for better traceability.
-              </p>
-              <p>
-                Monitored and maintained automated test results for stability and relevance.
-              </p>
-              <p>
-                Enhanced internal testing framework and infrastructure.
-              </p>
-            </div>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardContent class="p-6 text-right mb-16 px-4 sm:px-6">
-            <h3 class="text-lg font-bold text-rose-200">[10.2021 - 08.2022] QA Fullstack Engineer at andex, Moscow</h3>
-            <div class="text-violet-200">
-              <p>
-                Set up QA and release processes as the first automation engineer in the team.
-              </p>
-              <p>
-                Analyzed existing tests and features; created structured, prioritized test documentation.
-              </p>
-              <p>
-                Developed automated tests using the Hermione framework (based on WebdriverIO).
-              </p>
-              <p>
-                Collaborated with cross-functional teams for integration and joint releases.
-              </p>
-            </div>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardContent class="p-6 text-left mb-16 px-4 sm:px-6">
-            <h3 class="text-lg font-bold text-rose-200">[12.2018 - 09.2021] Software Developer in Test at Align Technology, Moscow</h3>
-            <div class="text-violet-200">
-              <p>
-                Developed automated tests for web and API services; designed supporting infrastructure.
-              </p>
-              <p>
-                Refactored and modularized test monorepository; introduced a new architecture.
-              </p>
-              <p>
-                Mentored an intern to junior-level QA; wrote onboarding and technical documentation.
-              </p>
-            </div>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardContent class="p-6 text-right mb-16 px-4 sm:px-6">
-            <h3 class="text-lg font-bold text-rose-200">[08.2017 - 05.2018] Testing Department Consultant at National Payment Card System, Moscow</h3>
-            <div class="text-violet-200">
-              <p>
-                Contributed to the development of a new internal test automation framework.
-              </p>
-              <p>
-                Managed testing team processes and supported a legacy test framework.
-              </p>
-              <p>
-                Introduced and formalized git-flow practices within the team.
-              </p>
-            </div>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardContent class="p-6 text-left mb-16 px-4 sm:px-6">
-            <h3 class="text-lg font-bold text-rose-200">[12.2015 - 07.2017] Junior Software Developer in Test at Ingram Micro Cloud, Moscow</h3>
-            <div class="text-violet-200">
-              <p>
-                Implemented and maintained E2E and API test automation for new features.
-              </p>
-              <p>
-                Analyzed test run results and compiled test reports.
-              </p>
-              <p>
-                Created Jenkins pipelines and managed test environment deployments.
-              </p>
-            </div>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardContent class="p-6 text-right mb-16 px-4 sm:px-6">
-            <h3 class="text-lg font-bold text-rose-200">[03.2015 - 11.2015] Manual QA at Luxoft, Omsk </h3>
-            <div class="text-violet-200">
-              <p>
-                Performed manual smoke, regression, and integration testing.
-              </p>
-              <p>
-                Created test designs and documented defects; worked closely with developers to resolve issues.
-              </p>
-            </div>
-          </CardContent>
-        </Card>
+            <ul><li v-for="item in job.highlights" :key="item">{{ item }}</li></ul>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section class="mb-16 bg-violet-900 rounded-xl shadow-xl px-6 py-8">
-      <h2 class="text-2xl font-semibold text-rose-300 text-center mb-6">Contacts</h2>
-      <div class="flex flex-col sm:grid sm:grid-cols-4 gap-4 text-center">
-        <a href="mailto:sinikowa@gmail.com" class="w-full text-wrap inline-flex justify-center items-center px-4 py-2 border border-violet-300 rounded-md shadow-sm text-sm font-medium text-pink-200 bg-violet-900 hover:bg-pink-400">
-          <i class="w-4 h-4 mr-2 pi pi-google"></i>
-          sinikowa@gmail.com
-        </a>
-        <a href="https://linkedin.com/in/adasinikova" target="_blank" class="w-full text-wrap inline-flex justify-center items-center px-4 py-2 border border-violet-300 rounded-md shadow-sm text-sm font-medium text-pink-200 bg-violet-900 hover:bg-pink-400">
-          <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.762 0-5 2.238-5 5v14c0 2.762 2.238 5 5 5h14c2.762 0 5-2.238 5-5v-14c0-2.762-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.867-3.063-1.868 0-2.154 1.46-2.154 2.97v5.697h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.839-1.563 3.036 0 3.598 2 3.598 4.598v5.598z"/></svg>
-          linkedin.com/in/adasinikova
-        </a>
-        <a href="https://t.me/adasinikova" target="_blank" class="w-full text-wrap inline-flex justify-center items-center px-4 py-2 border border-violet-300 rounded-md shadow-sm text-sm font-medium text-pink-200 bg-violet-900 hover:bg-pink-400">
-          <i class="w-4 h-4 mr-2 pi pi-telegram"></i>
-          t.me/adasinikova
-        </a>
-        <a href="https://github.com/asinka" target="_blank" class="w-full text-wrap inline-flex justify-center items-center px-4 py-2 border border-violet-300 rounded-md shadow-sm text-sm font-medium text-pink-200 bg-violet-900 hover:bg-pink-400">
-          <i class="w-4 h-4 mr-2 pi pi-github"></i>
-          github.com/asinka
-        </a>
+    <section id="contact" class="contact shell">
+      <div>
+        <p class="eyebrow">LET’S CONNECT</p>
+        <h2>Strong teams build quality<br>into everything they do.</h2>
+      </div>
+      <div class="contact-links">
+        <a href="mailto:sinikowa@gmail.com"><i class="pi pi-envelope"></i><span>Email<small>sinikowa@gmail.com</small></span><b>↗</b></a>
+        <a href="https://linkedin.com/in/adasinikova" target="_blank" rel="noopener noreferrer"><i class="pi pi-linkedin"></i><span>LinkedIn<small>in/adasinikova</small></span><b>↗</b></a>
+        <a href="https://t.me/adasinikova" target="_blank" rel="noopener noreferrer"><i class="pi pi-telegram"></i><span>Telegram<small>@adasinikova</small></span><b>↗</b></a>
+        <a href="https://github.com/asinka" target="_blank" rel="noopener noreferrer"><i class="pi pi-github"></i><span>GitHub<small>@asinka</small></span><b>↗</b></a>
       </div>
     </section>
-  </div>
+
+    <footer class="shell"><span>© 2026 Adelaida Sinikova</span><span>Built with curiosity & care.</span></footer>
+  </main>
 </template>
 
-<style scoped>
-@keyframes fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fade-in {
-  animation: fade-in 0.5s ease-in-out both;
-}
-</style>
+<style scoped src="./MainPage.css"></style>

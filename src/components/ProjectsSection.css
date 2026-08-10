@@ -1,0 +1,20 @@
+.project-grid { display: grid; gap: 16px; }
+.project-card { --accent: #a78bfa; --accent-rgb: 167, 139, 250; position: relative; overflow: hidden; display: grid; grid-template-columns: 58px 200px 1fr; gap: 28px; align-items: center; min-height: 200px; padding: 32px; border: 1px solid rgba(var(--accent-rgb), .3); border-radius: 20px; background: radial-gradient(circle at 8% 20%, rgba(var(--accent-rgb), .14), transparent 30%), linear-gradient(120deg, rgba(var(--accent-rgb), .06), #151319 45%); transition: transform .25s, border-color .25s, box-shadow .25s; }
+.project-card:nth-child(2) { --accent: #67e8f9; --accent-rgb: 103, 232, 249; }
+.project-card:nth-child(3) { --accent: #f0abfc; --accent-rgb: 240, 171, 252; }
+.project-card::before { content: ''; position: absolute; inset: 0 0 auto; height: 3px; background: linear-gradient(90deg, var(--accent), transparent 75%); }
+.project-card::after { content: ''; position: absolute; width: 180px; height: 180px; right: -100px; top: -100px; border-radius: 50%; background: rgba(var(--accent-rgb), .08); filter: blur(4px); }
+.project-card:hover { transform: translateY(-4px); border-color: rgba(var(--accent-rgb), .56); box-shadow: 0 22px 60px rgba(var(--accent-rgb), .09); }
+.project-number { align-self: start; width: 32px; height: 32px; display: grid; place-items: center; color: var(--accent); border: 1px solid rgba(var(--accent-rgb), .28); border-radius: 9px; background: rgba(var(--accent-rgb), .08); font: 700 .67rem/1 monospace; }
+.result { display: flex; flex-direction: column; border-right: 1px solid rgba(var(--accent-rgb), .2); }
+.result strong { color: var(--accent); font-size: 2.5rem; line-height: 1.05; letter-spacing: -.06em; text-shadow: 0 0 28px rgba(var(--accent-rgb), .2); }
+.project-card:nth-child(3) .result strong { font-size: 1.7rem; letter-spacing: -.04em; }
+.result span { color: #aaa4b2; font-size: .84rem; font-weight: 600; line-height: 1.35; margin-top: 8px; }
+.project-copy h3 { color: #e8e5ed; font-size: 1.25rem; margin: 0 0 7px; }
+.company { color: var(--accent) !important; font-weight: 700; font-size: .76rem !important; margin: 0 0 14px !important; }
+.project-copy > p:last-child { color: #918c99; font-size: .86rem; line-height: 1.65; margin: 0; }
+@media (max-width: 760px) {
+  .project-card { grid-template-columns: 32px 1fr; gap: 18px; padding: 24px 20px; }
+  .result { border: 0; padding-left: 4px; }
+  .project-copy { grid-column: 2; }
+}

@@ -71,9 +71,9 @@ const experience = [
     ],
   },
   {
-    period: '10.2021 — 08.2022', role: 'QA Fullstack Engineer', company: 'andex', location: 'Moscow',
+    period: '10.2021 — 08.2022', role: 'QA Fullstack Engineer', company: 'Yandex', location: 'Moscow',
     highlights: [
-      'Set up QA and release processes as the first automation engineer in the team.',
+      'Set up QA and release processes as the only QA on the team.',
       'Analyzed existing tests and features and created structured, prioritized test documentation.',
       'Developed automated tests using the Hermione framework based on WebdriverIO.',
       'Collaborated with cross-functional teams on integrations and joint releases.',

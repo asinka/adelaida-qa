@@ -34,7 +34,7 @@ const experience = [
       "Joined as the company's first QA automation engineer and built the automation foundation from scratch.",
       'Established testing and automation processes for a fully distributed international engineering organization.',
       'Built the QA team and led hiring, onboarding, and team development.',
-      'Lead six QA engineers supporting five product teams, partnering with US-based managers and engineers worldwide.',
+      'Lead six direct reports across five product teams, partnering with US-based managers and engineers worldwide.',
       'Developed E2E automation with Playwright and introduced Python-based tests for internal tools.',
       'Evolved delivery workflows with GitHub, GitHub Actions, Jira, and Linear.',
     ],
@@ -126,11 +126,12 @@ const experience = [
 
     <section id="top" class="hero shell">
       <div class="hero-copy">
-        <p class="eyebrow">QA AUTOMATION · TEAM LEADERSHIP · REMOTE</p>
-        <h1>I build quality teams<br><span>that products trust.</span></h1>
+        <p class="hero-name">Adelaida Sinikova <span>QA Automation Lead</span></p>
+        <p class="eyebrow">TEAM LEADERSHIP · QUALITY STRATEGY · QA AUTOMATION</p>
+        <h1>I build QA teams<br><span>that help products scale with confidence.</span></h1>
         <p class="intro">
-          Hi, I’m Adelaida — a QA Automation Lead who builds high-performing QA teams and turns testing
-          into a reliable engineering practice. I set direction, grow people, and help products ship with confidence.
+          I build high-performing QA teams and turn testing into a reliable engineering practice.
+          I set direction, grow people, and stay close enough to the technology to make pragmatic decisions.
         </p>
         <div class="hero-actions">
           <a class="button primary" href="#experience">Explore my experience <span>↓</span></a>
@@ -140,16 +141,18 @@ const experience = [
       <div class="portrait-wrap">
         <div class="portrait-glow"></div>
         <img src="/your-photo.webp" alt="Adelaida Sinikova" class="portrait" width="660" height="649" decoding="async" fetchpriority="high" />
-        <div class="available"><span></span> Open to meaningful conversations</div>
+        <div class="available"><span></span> Based in Spain · CET/CEST · Distributed teams worldwide</div>
       </div>
     </section>
 
     <section class="metrics shell" aria-label="Career highlights">
       <div><strong>11+</strong><span>years in QA</span></div>
-      <div><strong>6</strong><span>QA engineers led</span></div>
-      <div><strong>5</strong><span>product teams supported</span></div>
+      <div><strong>6</strong><span>direct reports across 5 product teams</span></div>
+      <div><strong>9</strong><span>QA hires across my leadership roles</span></div>
       <div><strong>4h</strong><span>regression, down from 2 days</span></div>
     </section>
+
+    <ProjectsSection id="work" />
 
     <section id="toolkit" class="section shell">
       <div class="section-heading">
@@ -174,8 +177,6 @@ const experience = [
         </article>
       </div>
     </section>
-
-    <ProjectsSection id="work" />
 
     <section id="experience" class="section shell experience-section">
       <div class="section-heading">
